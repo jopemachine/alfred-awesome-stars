@@ -1,0 +1,8 @@
+{
+  "generator-alfred": {
+    "promptValues": {
+      "githubUsername": "jopemachine",
+      "website": "https://github.com/jopemachine/alfred-awesome-stars"
+    }
+  }
+}
