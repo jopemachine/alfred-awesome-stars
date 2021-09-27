@@ -30,12 +30,16 @@ const removeBraket = (str) => {
   return str.substr(1, str.length - 1);
 }
 
-
 const transformData = (lang, repoInfo) => {
+  const title = `[${lang}][${repoInfo.maintainer}/${repoInfo.repoName}]`;
   return {
-    title: `[${lang}][${repoInfo.maintainer}/${repoInfo.repoName}]`,
+    title,
     subtitle: repoInfo.description,
-    arg: removeBraket(repoInfo.urlWithBracket)
+    arg: removeBraket(repoInfo.urlWithBracket),
+    text: {
+      copy: title,
+      largetype: title,
+    },
   };
 };
 
@@ -63,7 +67,7 @@ const transformData = (lang, repoInfo) => {
     }
   });
 
-  alfy.output(data.filter((item) => {
+  const result = data.filter((item) => {
     let ret = false;
     alfy.input.split(' ').forEach((word) => {
       if (!ret) {
@@ -72,6 +76,15 @@ const transformData = (lang, repoInfo) => {
     });
 
     return ret;
-  }));
+  });
+
+  const summary = {
+    title: `${result.length} repositories were found.`,
+  };
+
+  alfy.output({
+    summary,
+    ...result
+  });
 })();
 

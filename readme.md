@@ -1,6 +1,6 @@
 # alfred-awesome-stars
 
-> Search someone's starred repository through 'awesome-stars'
+> Search starred repository through 'awesome-stars'
 
 ## Install
 
@@ -11,6 +11,8 @@ $ npm install --global alfred-awesome-stars
 *Requires [Node.js](https://nodejs.org) 12+ and the Alfred [Powerpack](https://www.alfredapp.com/powerpack/).*
 
 ## Setup
+
+### githubUserId
 
 Enter github user id.
 
