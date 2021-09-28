@@ -2,6 +2,8 @@
 
 > Search starred repository through 'awesome-stars'
 
+![](./media/demo.png)
+
 ## Install
 
 ```
