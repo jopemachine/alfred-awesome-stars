@@ -27,7 +27,7 @@ const ban = [
 ];
 
 const removeBraket = (str) => {
-  return str.substr(1, str.length - 1);
+  return str.substr(1, str.length - 2);
 }
 
 const transformData = (lang, repoInfo) => {
@@ -44,7 +44,7 @@ const transformData = (lang, repoInfo) => {
 };
 
 (async () => {
-  const starredListRawString = await alfy.fetch(url, { maxAge: 60 * 60 * 24 });
+  const starredListRawString = Buffer.from((await alfy.fetch(url, { maxAge: 60 * 60 * 24 })).content, 'base64').toString('utf8');
 
   const splits = starredListRawString.split(/(\#\#.*)/);
 
@@ -69,9 +69,9 @@ const transformData = (lang, repoInfo) => {
 
   const result = data.filter((item) => {
     let ret = false;
-    alfy.input.split(' ').forEach((word) => {
+    alfy.input.normalize().split(' ').forEach((word) => {
       if (!ret) {
-        ret = item.title.toLowerCase().includes(word.toLowerCase());
+        ret = item.title.toLowerCase().includes(word.toLowerCase()) || item.subtitle.toLowerCase().includes(word.toLowerCase());
       }
     });
 
@@ -82,9 +82,9 @@ const transformData = (lang, repoInfo) => {
     title: `${result.length} repositories were found.`,
   };
 
-  alfy.output({
+  alfy.output([
     summary,
     ...result
-  });
+  ]);
 })();
 
