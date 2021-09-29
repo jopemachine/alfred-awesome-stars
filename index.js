@@ -31,7 +31,7 @@ const removeBraket = (str) => {
 }
 
 const transformData = (lang, repoInfo) => {
-  const title = `[${lang}][${repoInfo.maintainer}/${repoInfo.repoName}]`;
+  const title = `[${lang}] ${repoInfo.maintainer}/${repoInfo.repoName}`;
   return {
     title,
     subtitle: repoInfo.description,
@@ -44,7 +44,10 @@ const transformData = (lang, repoInfo) => {
 };
 
 (async () => {
-  const starredListRawString = Buffer.from((await alfy.fetch(url, { maxAge: 60 * 60 * 24 })).content, 'base64').toString('utf8');
+  const starredListRawString =
+    await alfy.fetch(url, { maxAge: 60 * 60 * 24 })
+      .then((response) => response.content)
+      .then((content) => Buffer.from(content, 'base64').toString('utf-8'));
 
   const splits = starredListRawString.split(/(\#\#.*)/);
 
@@ -80,6 +83,8 @@ const transformData = (lang, repoInfo) => {
 
   const summary = {
     title: `${result.length} repositories were found.`,
+    subtitle: 'Press enter to open starred repositories\'s url',
+    arg: `https://github.com/${id}?tab=stars`
   };
 
   alfy.output([

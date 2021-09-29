@@ -1,6 +1,6 @@
 {
   "name": "alfred-awesome-stars",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Search starred repository through 'awesome-stars'",
   "license": "MIT",
   "repository": "jopemachine/alfred-awesome-stars",
