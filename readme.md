@@ -1,5 +1,12 @@
 # alfred-awesome-stars
 
+[![NPM version](https://badge.fury.io/js/alfred-awesome-stars.svg)](http://badge.fury.io/js/alfred-awesome-stars)
+[![npm download total](https://img.shields.io/npm/dt/alfred-awesome-stars)](https://www.npmjs.com/package/alfred-awesome-stars)
+[![license](https://img.shields.io/github/license/jopemachine/alfred-awesome-stars.svg)](https://github.com/jopemachine/alfred-awesome-stars/blob/master/LICENSE)
+[![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![GitHub issues](https://img.shields.io/github/issues/jopemachine/alfred-awesome-stars.svg)](https://GitHub.com/jopemachine/alfred-awesome-stars/issues/)
+
+
 > Search starred repository through 'awesome-stars'
 
 ![](./media/demo.png)
