@@ -33,6 +33,8 @@ Make sure the user has [awesome-stars](https://github.com/maguowei/awesome-stars
 
 In Alfred, type `star`, <kbd>Enter</kbd>, and your query.
 
+`star` searchs starred repositories's `maintainer name`, `repository name`, `repository description`, `programming language`.
+
 ## Related
 
 - [starred](https://github.com/maguowei/starred)
