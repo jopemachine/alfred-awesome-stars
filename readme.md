@@ -1,4 +1,4 @@
-# alfred-awesome-stars
+9# alfred-awesome-stars
 
 [![NPM version](https://badge.fury.io/js/alfred-awesome-stars.svg)](http://badge.fury.io/js/alfred-awesome-stars)
 [![npm download total](https://img.shields.io/npm/dt/alfred-awesome-stars)](https://www.npmjs.com/package/alfred-awesome-stars)
@@ -38,7 +38,7 @@ In Alfred, type `star`, <kbd>Enter</kbd>, and your query.
 ## Related
 
 - [starred](https://github.com/maguowei/starred)
-- [alfred-awesome-stars](https://github.com/maguowei/awesome-stars)
+- [awesome-stars](https://github.com/maguowei/awesome-stars)
 
 ## Icon sources
 
